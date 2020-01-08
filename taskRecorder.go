@@ -12,13 +12,14 @@ import (
 )
 
 var (
-	remote = "cameron:linux@tcp(10.0.0.104:3306)/work_records"
-	local  = "cameron:linux@tcp(127.0.0.0:3306)/work_records"
+	remote = "cameron:linux@tcp(66.45.159.238:3306)/work_records"
+	LAN = "cameron:linux@tcp(10.0.0.104:3306)/work_records"
+	localhost  = "cameron:linux@tcp(127.0.0.1:3306)/work_records"
 )
 
 func main() {
 	db, err := sql.Open("mysql",
-		remote)
+		LAN)
 	if err != nil {
 		log.Fatal(err)
 	}
